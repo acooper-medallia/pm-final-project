@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Journey Map: Last-Mile Delivery Driver · RouteLogic Velocity</title>
+<style>
+  :root {
+    --ink: #1d2433; --muted: #5b6475; --line: #e3e6ec; --bg: #f7f8fa; --card: #fff;
+    --good: #2f8f5b; --ok: #c98a16; --bad: #c8412f; --accent: #2b5fd9;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: var(--bg); }
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 32px 24px 48px; }
+  header h1 { margin: 0 0 4px; font-size: 26px; }
+  header p { margin: 0; color: var(--muted); }
+  .persona { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+  .persona div { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+  .persona h3 { margin: 0 0 6px; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+  .persona p { margin: 0; }
+
+  .map { display: grid; grid-template-columns: 150px repeat(5, 1fr); background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .map > div { padding: 12px 14px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .map > .rowlabel { border-left: none; font-size: 12px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); background: #fbfbfc; }
+  .map > .stage { border-top: none; background: var(--ink); color: #fff; font-weight: 600; }
+  .map > .stage small { display: block; font-weight: 400; opacity: .75; }
+  .map > .corner { border-top: none; background: var(--ink); }
+  .map > .misery { background: #fdf1ef; }
+  .map > .stage.misery { background: var(--bad); }
+  ul { margin: 0; padding-left: 18px; }
+  li { margin: 2px 0; }
+  .tag { display: inline-block; font-size: 12px; padding: 2px 8px; border-radius: 99px; background: #eef1f6; margin: 2px 4px 2px 0; }
+  .tag.ext { background: #fff3dc; color: #7a5200; }
+  .sev { font-size: 11px; font-weight: 700; padding: 1px 6px; border-radius: 4px; color: #fff; margin-right: 4px; }
+  .sev.c { background: #8e1f12; } .sev.h { background: var(--bad); } .sev.m { background: var(--ok); }
+  q { font-style: italic; color: #39404f; }
+  .src { color: var(--muted); font-size: 12px; }
+
+  .curve { grid-column: 2 / span 5; padding: 0 !important; border-left: 1px solid var(--line); }
+  .curve svg { display: block; width: 100%; height: 130px; }
+
+  .callout { margin-top: 24px; background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--bad); border-radius: 10px; padding: 16px 20px; }
+  .callout h2 { margin: 0 0 6px; font-size: 18px; }
+  .callout blockquote { margin: 10px 0 0; padding-left: 12px; border-left: 3px solid var(--line); color: #39404f; font-style: italic; }
+  footer { margin-top: 20px; color: var(--muted); font-size: 12px; }
+  @media (max-width: 900px) {
+    .persona { grid-template-columns: 1fr; }
+    .map { grid-template-columns: 110px repeat(5, minmax(180px, 1fr)); overflow-x: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Current-State Journey Map: Last-Mile Delivery Driver</h1>
+    <p>RouteLogic Velocity (B2B) · Built from 12 research sessions (UXR-01 to UXR-12) and 10 bug reports (BUG-2031 to BUG-2090)</p>
+  </header>
+
+  <section class="persona">
+    <div><h3>Role</h3><p>Frontline driver running a 30–60+ stop route on Android, often one-handed and in low-signal areas. Uses about 5% of the product, all day long.</p></div>
+    <div><h3>Goal</h3><p>Finish every stop quickly, with each delivery recorded and proven the moment it happens, so dispatch never has to chase them.</p></div>
+    <div><h3>Moment of misery</h3><p>Closing out a stop at the doorstep: 3 taps across 3 screens, then a POD photo that may silently fail. The driver can't tell whether it worked.</p></div>
+  </section>
+
+  <section class="map" aria-label="Journey map grid">
+    <div class="corner"></div>
+    <div class="stage">1 · Prep<small>Before leaving the depot</small></div>
+    <div class="stage">2 · Start route<small>First stop of the day</small></div>
+    <div class="stage">3 · Navigate<small>Between stops</small></div>
+    <div class="stage misery">4 · Close out stop<small>At the doorstep · moment of misery</small></div>
+    <div class="stage">5 · Handle changes<small>Mid-route reassignments</small></div>
+
+    <div class="rowlabel">Doing</div>
+    <div><ul><li>Loads stop list</li><li>Screenshots the route</li><li>Carries a paper manifest</li></ul></div>
+    <div><ul><li>Hunts for "Start Route" 2–3 menus deep</li><li>Repeats this ~30×/day</li></ul></div>
+    <div><ul><li>Follows the optimized route</li><li>Overrides closed roads and dock access by memory</li></ul></div>
+    <div class="misery"><ul><li>Taps through 3 screens to mark delivered</li><li>Takes POD photo, gets no confirmation</li><li>Retakes it up to 3×</li><li>Texts dispatcher "delivered"</li></ul></div>
+    <div><ul><li>Drives on a stale route for 8–15 min</li><li>Checks the WhatsApp group</li><li>Calls the office if the app crashed</li></ul></div>
+
+    <div class="rowlabel">Thinking / feeling</div>
+    <div><q>Just in case the app dies.</q> <span class="src">UXR-12</span></div>
+    <div><q>Buried under features I've never touched.</q> <span class="src">UXR-11</span></div>
+    <div><q>I override it every day.</q> <span class="src">UXR-05</span></div>
+    <div class="misery"><q>In the rain, at a doorstep, with a package in one hand… I've started just texting my dispatcher.</q> <span class="src">UXR-01</span></div>
+    <div><q>By then they've driven the wrong way.</q> <span class="src">UXR-02</span></div>
+
+    <div class="rowlabel">Tools used</div>
+    <div><span class="tag">App</span><span class="tag ext">Screenshots</span><span class="tag ext">Paper manifest</span></div>
+    <div><span class="tag">App</span></div>
+    <div><span class="tag">App</span><span class="tag ext">Driver memory</span></div>
+    <div class="misery"><span class="tag">App</span><span class="tag ext">SMS to dispatcher</span></div>
+    <div><span class="tag ext">WhatsApp group</span><span class="tag ext">Phone call to office</span></div>
+
+    <div class="rowlabel">Pain points</div>
+    <div><span class="sev h">HIGH</span>Offline mode doesn't cache stops; blank route (BUG-2050)</div>
+    <div><span class="sev h">HIGH</span>Core actions buried; no configurable home (BUG-2079)</div>
+    <div><span class="sev m">MED</span>Ignores closures and access constraints; can't save overrides (BUG-2068)</div>
+    <div class="misery"><span class="sev h">HIGH</span>3-tap delivery (BUG-2055)<br><span class="sev h">HIGH</span>~35% silent POD upload failure (BUG-2061)<br><span class="sev m">MED</span>Dashboard lags 20–60 min (BUG-2072)</div>
+    <div><span class="sev c">CRIT</span>Reassignments take 8–15 min, no push (BUG-2044)<br><span class="sev c">CRIT</span>Crash at ~40+ stops loses route (BUG-2031)</div>
+
+    <div class="rowlabel">Emotion</div>
+    <div class="curve">
+      <svg viewBox="0 0 1000 130" preserveAspectRatio="none" role="img" aria-label="Emotion curve: wary at prep, frustrated at start, resigned while navigating, lowest at close-out, anxious at changes">
+        <line x1="0" y1="65" x2="1000" y2="65" stroke="#e3e6ec" stroke-dasharray="4 4"/>
+        <path d="M100,52 C180,52 220,74 300,74 C380,74 420,68 500,68 C580,68 620,114 700,114 C780,114 820,92 900,92"
+              fill="none" stroke="#1d2433" stroke-width="3" vector-effect="non-scaling-stroke"/>
+        <g font-size="13" text-anchor="middle" fill="#1d2433">
+          <circle cx="100" cy="52" r="6" fill="#c98a16"/><text x="100" y="36">Wary</text>
+          <circle cx="300" cy="74" r="6" fill="#c98a16"/><text x="300" y="58">Frustrated</text>
+          <circle cx="500" cy="68" r="6" fill="#c98a16"/><text x="500" y="52">Resigned</text>
+          <circle cx="700" cy="114" r="8" fill="#c8412f"/><text x="700" y="98" font-weight="700" fill="#c8412f">Lowest: "Did it work?"</text>
+          <circle cx="900" cy="92" r="6" fill="#c8412f"/><text x="900" y="76">Anxious</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <section class="callout">
+    <h2>Core frustration: the doorstep close-out</h2>
+    <p>The driver has done everything the app asked and still doesn't know whether the delivery was recorded. That uncertainty is what triggers the retakes, the texts to dispatch, and the paper backups. From that point on, the app duplicates the real system instead of being it.</p>
+    <blockquote>"Proof-of-delivery photos take forever to upload and half fail. Drivers don't know if it worked, so they retake three times." (UXR-07, warehouse lead)</blockquote>
+    <blockquote>5 of 7 drivers keep a paper manifest "just in case the app dies"; 7 of 7 rank speed of core actions above any new feature. (UXR-12, driver focus group)</blockquote>
+  </section>
+
+  <footer>Current-state map only; no solutions are proposed here. Severities come from the bug tracker, except BUG-2079, which is raised from Medium to High based on its link to renewal risk (UXR-04, UXR-10). Participants are identified by role only.</footer>
+</div>
+</body>
+</html>
