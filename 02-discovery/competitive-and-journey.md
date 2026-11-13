@@ -15,4 +15,4 @@ Write what stops were made or need to be made on paper to update in the app late
 - **Core frustration, the exact moment the process feels most “broken”:** The process breaks down right after the driver takes the proof-of-delivery photo. They’ve done everything the app asked, and the app gives no sign of whether the delivery was recorded.
 - **The evidence, a specific quote or behavior from the research that proves this:** “Drivers don’t know if it worked, so they retake three times.” (UXR-07, warehouse lead)
 “I’ve started just texting my dispatcher instead.” (UXR-01, driver)
-- **Your journey map, a shareable link, or the map file you committed (e.g. journey-map.html):** file:///Users/ajackson/Repo-final%20project/pm-final-project/02-discovery/future-state-journey.html
+- **Your journey map, a shareable link, or the map file you committed (e.g. journey-map.html):** [`02-discovery/future-state-journey.html`](future-state-journey.html)
