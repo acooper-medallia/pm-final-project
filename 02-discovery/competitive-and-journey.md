@@ -1,21 +1,18 @@
-# Competitive Analysis & Journey Map
-
-> **Module 2 · Lab 2 — ★ Deliverable 2.** Repo file `02-discovery/competitive-and-journey.md` — part of your submission.
-> Do the lab in the **Module 2 · Exercise 2 Guide** (linked from the Module 2 deck), then click **⬇ Download .md** — it saves as this exact file. Commit it here.
-> It becomes the **Competitive Analysis & Journey Map** slide of your Module 6 final deck. Builds on your `ai-synthesis.md` and your Module 1 `problem-hook.md`.
+# Competitive Analysis & Journey Map (Module 2)
 
 ## Responses
-
-- **Role, who are you solving for?:** The frontline last-mile delivery driver on RouteLogic Velocity (B2B): a driver working a 30–60+ stop route on an Android phone, often one-handed at the doorstep, sometimes in rural or low-signal areas. They use roughly 5% of the product, but they use it all day.
-- **Goal, what is this user ultimately trying to achieve?:** Finish every stop on the route quickly and correctly, with each delivery recorded and proven the moment it happens, so that dispatch, the warehouse, and the customer see an accurate status without the driver having to follow up.
-- **Friction, the main barrier (moment of misery) stopping them:** At the doorstep, closing out a stop is slow and unreliable. "Mark delivered" takes 3 taps across 3 screens (BUG-2055), and the proof-of-delivery photo then fails silently on weak signal about 35% of the time (BUG-2061). The driver can't tell whether the delivery was recorded, so they stop trusting the app as the system of record.
-- **External tools the user is forced to use:** SMS/text messages to the dispatcher (to report deliveries), the dispatcher's WhatsApp group (the "real system" for route changes), phone calls to the office (to recover stops after a crash), a paper manifest (backup kept by 5 of 7 focus-group drivers), and phone screenshots of the route (offline backup).
-- **The process, the 3–5 manual steps they take:**
-  1. Before leaving, screenshot the route and print or carry a paper manifest in case the app crashes or loses signal.
-  2. At the doorstep, tap through 3 screens to mark the stop delivered, with a package in one hand.
-  3. Take the POD photo. With no success confirmation, retake it up to 3 times "to be safe."
-  4. Text the dispatcher to confirm the delivery, because neither of them trusts the app's status (the dashboard lags 20–60 min).
-  5. Check WhatsApp for route changes, since in-app reassignments arrive 8–15 min late with no push notification.
-- **Core frustration, where the process feels most "broken":** Standing at the doorstep after the photo upload: the driver has done everything the app asked and still doesn't know whether it worked. That uncertainty pushes them to retake photos and text dispatch, which makes the app a duplicate of the real system rather than the system itself.
-- **The evidence, a quote or behavior from the research:** *"To mark a stop delivered I tap through three screens. In the rain, at a doorstep, with a package in one hand. I've started just texting my dispatcher instead."* (UXR-01, driver, 3 yrs). This is backed by UXR-07: *"Drivers don't know if it worked, so they retake three times,"* and by UXR-12, where 5 of 7 drivers keep a paper manifest and all 7 rank core-action speed above any new feature.
-- **Journey map, a shareable link or the map file you committed:** [`02-discovery/journey-map.html`](journey-map.html)
+- **Role, who are you solving for? (the specific user segment or profile):** Frontline Delivery Driver
+- **Goal, what is this user ultimately trying to achieve?:** To move through every stop quickly and trust that each delivery was recorded, without needing a backup system.
+- **Friction, the main barrier (moment of misery) stopping them from succeeding:** Marking a stop delivered takes three taps across three screens, “in the rain, at a doorstep, with a package in one hand.” The driver has stopped using the app for this and texts the dispatcher instead (UXR-01, BUG-2055). Core actions like Start Route are now buried under features they’ve never used (UXR-11, BUG-2079). This is why 5 of 7 focus-group drivers carry a paper manifest “just in case the app dies” (UXR-12).
+- **External tools, the outside platforms or tools the user is forced to use:** SMS/text message to other users
+Paper tracking
+Phone calls
+- **The process, the 3 to 5 manual steps the user takes to get the job done:** Print paper manifest for the days stops
+Find actions in the app to start the day
+If picture or update on app doesn't go through, send message manually to confirm delivery
+If app crashes call office for next locations
+Write what stops were made or need to be made on paper to update in the app later
+- **Core frustration, the exact moment the process feels most “broken”:** The process breaks down right after the driver takes the proof-of-delivery photo. They’ve done everything the app asked, and the app gives no sign of whether the delivery was recorded.
+- **The evidence, a specific quote or behavior from the research that proves this:** “Drivers don’t know if it worked, so they retake three times.” (UXR-07, warehouse lead)
+“I’ve started just texting my dispatcher instead.” (UXR-01, driver)
+- **Your journey map, a shareable link, or the map file you committed (e.g. journey-map.html):** file:///Users/ajackson/Repo-final%20project/pm-final-project/02-discovery/future-state-journey.html
