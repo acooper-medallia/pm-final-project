@@ -1,17 +1,30 @@
-# Hypothesis & Success Metrics
+# Hypothesis & Success Metrics (Module 3)
 
-> **Module 3 · ★ Deliverable 3.** Repo file `03-analytics/hypothesis-and-metrics.md` — part of your submission.
-> Do the lab in the **Module 3 · Exercise Guide** (linked from the Module 3 deck), then click **⬇ Download .md** — it saves as this exact file. Commit it here.
-> It feeds the **Problem, Value & Hypothesis** slide of your Module 6 final deck.
+## Pre-work · Hypothesis check
+- **Role , who you are solving for (from M2):** Frontline Delivery Driver
+- **Goal , what this user is ultimately trying to achieve:** Move through every stop quickly and trust each delivery was recorded, without a backup system.
+- **Friction / moment of misery , the specific pain blocking their goal:** "Mark delivered" takes 3 taps across 3 screens, and core actions are buried. That's why 5 of 7 drivers carry a paper manifest.
+- **Current workaround , the external tool or manual process they rely on (M2):** SMS/texts, paper tracking, phone calls
+- **Problem Hook , your one-sentence framing of the business crisis (M1):** We must stop our enterprise customers from churning to leaner competitors by giving the users a faster, more focused workflow to achieve real time coordination while maintaining all features, but creating a more streamlined path available.
+- **Value Proposition , the outcome your initiative promised to deliver (M1):** For frontline drivers closing 30–60+ stops a day, often one-handed and on weak signal, closing out a stop at the doorstep becomes a single tap with confirmed proof of delivery. Only the essential actions show; everything else goes behind a "More" menu. It's urgent because drivers have moved to texts, WhatsApp and paper. That erodes the data enterprise reporting depends on, and one enterprise account is already evaluating a simpler competitor.
 
-## Finalized product hypothesis
+## Read your data snapshots
+- **Does the funnel data confirm your M2 friction point, or does it tell a different story? Note where the numbers align with the qualitative pain you found and where they diverge.:** _(not filled in)_
+- **Do the retention patterns align with the workaround your M2 persona used to find content? Note what the Mo. 0→1 drop suggests about the onboarding experience your persona described as frustrating.:** _(not filled in)_
+- **Does the LTV gap and the content mix (61% trending for Wanderers) confirm the moment of misery your persona described? Note which segment your persona is in and whether the data confirms their pain.:** _(not filled in)_
+- **Does the low adoption confirm your persona is burdened by tools they don’t use? Note whether the low scheduling adoption (42%) for coordinators matches your M2 moment of misery.:** It isn't saying they are burdened by it, but it just shows it is not a necessary feature or functionality they are utilizing regularly, meaning it is not something they need at the forefront of their user experience when the first three are clearly their most necessary functionalities.
+- **Does the workflow data match the manual process or hack you documented in M2? Note whether the specific drop-offs or time gaps explain why your persona avoids the digital tool.:** It does, we see a drop off at the assigning routes pretty significantly and then logging compliance checks even more so which align to the difficulties and friction of trying to mark things as delivered, upload the picture, etc. where they end up using paper trails to keep track rather than rely on the app because of how unreliable it can be.
+- **Look at the CSAT heatmap. Which specific cell most directly maps to your persona’s friction? Note how the NPS trend justifies the urgency of your M1 Problem Hook.:** With reporting being the lowest score this aligns to the instability of being able to provide real time updates on the delivery status and submitting proof. While it is great managers are happy, the effort front line has to endure clearly shows by their scoring.
 
-> Based on [qual + quant evidence], I believe that [solving X] for [persona] will result in [outcome], as measured by a [X%] change in [success metric]. I will protect [guardrail metric] and make a go/no-go decision after [decision window].
-
-## Success metrics
-
-| Metric | Type | Target | Why it matters |
-|---|---|---|---|
-| _North-star_ | | _____ | _____ |
-| _Leading indicator_ | | _____ | _____ |
-| _Guardrail_ | | _____ | _____ |
+## Step 3 · Craft your hypothesis
+- **Qualitative evidence (from M2) , quote the specific friction / moment of misery for your persona:** Marking a stop delivered takes three taps across three screens, "in the rain, at a doorstep, with a package in one hand." The driver has stopped using the app for this and texts the dispatcher instead (UXR-01, BUG-2055). Core actions like Start Route are buried under features they've never used (UXR-11, BUG-2079). This is why 5 of 7 focus-group drivers carry a paper manifest "just in case the app dies" (UXR-12).
+"Drivers don't know if it worked, so they retake three times." (UXR-07, warehouse lead)
+"I've started just texting my dispatcher instead." (UXR-01, driver)
+- **Quantitative evidence (from M3) , name the metric or data point that confirms the pain; cite the number:** Driver reported CSAT as 1.1 and Coordinators also reported it at 1.3
+- **Persona , role, goal, and the friction you confirmed in the reconciliation steps:** Frontline driver running a 30-60+ stop route cannot trust the app will allow them to make the updates or reporting needs during their route
+- **Problem you are solving , one sentence describing the specific friction this initiative removes:** Frontline delivery drivers can't close out a stop at the doorstep with confidence: marking a delivery takes 3 taps across 3 screens, and the proof-of-delivery photo can fail silently, so they retake photos, text dispatch, and keep paper backups instead of trusting the app.
+- **Strategic outcome , what behaviour change do you expect, and how does it map to retention / revenue / churn?:** If frontline drivers trust the app to record each delivery, they stop running outside systems, reporting stays accurate, and accounts renew instead of switching to a leaner competitor
+- **Primary success metric (initiative signal) , the leading indicator that tells you the gap is closing:** % of stops confirmed in-app on the first attempt
+- **Guardrail metric (product signal) , the metric that must NOT drop; it protects your existing base:** While we streamline the close-out, the rate of failed-delivery and exception reports must not drop, so moving features behind "More" doesn't create gaps in the enterprise reporting customers rely on.
+- **Decision window , how much time or data before you scale, pivot, or kill? minimum threshold to proceed?:** I will make a go/no-go decision 4 weeks after the pilot launches, based on whether first-attempt in-app confirmations rose while the exception reporting rate held steady.
+- **Draft your full hypothesis sentence , one to three sentences; quote the metric, name the persona, name the outcome:** Based on driver interviews where 5 of 7 drivers keep paper manifests, take photos many times and text dispatch, I believe that reducing the doorstep close out to a single tap with a visible "Recorded" confirmation for frontline delivery drivers will result in drivers trusting the app as their system of record instead of texts and paper, as measured by a 25% increase in the % of stops confirmed in-app on the first attempt. I will protect the exception reporting rate and will make a go/no-go decision after a 4-week pilot.
